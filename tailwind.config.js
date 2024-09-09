@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'imprint': ['Imprint MT Shadow', 'serif'],
+        'poppin': ['poppin', 'serif'],
+      },
+    },
   },
   plugins: [],
 }
