@@ -46,7 +46,7 @@ const Home = () => {
 
   {/* image crousel */}
 
-  <div className='flex flex-col justify-center h-3/6 items-center py-4'>
+  <div className='flex flex-col justify-center h-3/6 bg-white items-center py-4'>
   <Carousel 
     autoPlay={true} 
     interval={2000}  // Auto-play interval set to 5 seconds
@@ -56,7 +56,7 @@ const Home = () => {
     className='w-5/6  '>
     {imagePath.length > 0 ? imagePath.map((src, index) => (
       <div key={index} className=''>
-        <img src={src} alt={`Carousel Slide ${index}`} className=" w-full object-cover " />
+        <img src={src} alt={`Carousel Slide ${index}`} className=" w-full text-center " />
       </div>
     )) : null}
   </Carousel>
