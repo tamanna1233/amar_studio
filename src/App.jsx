@@ -6,8 +6,8 @@ const Home=lazy(()=> import ('./components/Home'))
 const App = () => {
   return (
     <div className='bg-black'>
-       <Home/>
-       <Navbar/>
+             <Navbar/>
+             <Home/>
     </div>
   )
 }
