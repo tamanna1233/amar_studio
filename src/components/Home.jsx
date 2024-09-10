@@ -27,7 +27,7 @@ const Home = () => {
     <>
     <div className='flex flex-col  items-center'>
         {/* well come to amar studio  */}
-    <div className='font-imprint text-sm sm:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFD700] to-[#D3D3D3]  py-4'>
+    <div className='font-imprint text-xs sm:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFD700] to-[#D3D3D3]  py-4'>
       <TypeAnimation
       sequence={["WELLCOME TO AMAR STUDIO" ,2000,
         "WHERE MOMENTS BECOME MASTERPICES",2000,
