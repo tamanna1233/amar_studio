@@ -27,7 +27,7 @@ const Home = () => {
     <>
     <div className='flex flex-col  items-center'>
         {/* well come to amar studio  */}
-    <div className='font-imprint text-xs sm:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-[#FFD700] to-[#D3D3D3]  py-4'>
+    <div className='font-imprint text-xs sm:text-2xl md:text-4xl  bg-clip-text text-transparent bg-gradient-to-b from-[#FFD700] to-[#D3D3D3]  py-4'>
       <TypeAnimation
       sequence={["WELLCOME TO AMAR STUDIO" ,2000,
         "WHERE MOMENTS BECOME MASTERPICES",2000,
@@ -39,7 +39,7 @@ const Home = () => {
  
     </div>
      {/* subtext of page  */}
-    <p className='text-white text-[0.65rem] font-light sm:text-xl mx-6 sm:mx-40 text-center font-poppin py-4'>
+    <p className='text-white  text-left font-light text-xs sm:text-sm md:text-xl px-8 sm:px-20 md:px-40 sm:text-center font-poppin py-4 '>
   At amar studio, we believe that every moment deserves to be cherished forever. Whether it's your wedding day, a maternity shoot, or your baby’s first steps, we are here to capture those priceless moments with creativity and precision. Our team of skilled photographers specializes in wedding, pre-wedding, maternity, baby, and drone photography, ensuring that every frame tells your unique story. Let us be part of your journey, creating memories that will last a lifetime.
   </p>
 
@@ -48,17 +48,20 @@ const Home = () => {
   <div className='flex  justify-center w-full  items-center py-4'>
   <Carousel 
     autoPlay={true} 
-    interval={2000}  // Auto-play interval set to 5 seconds
+    interval={3000}  // Auto-play interval set to 5 seconds
     infiniteLoop={true} 
     autoFocus={true}
     width={"80%"}
+    showArrows={true} 
+    transitionTime={1500}
     showThumbs={false}
     className='   flex flex-col items-center justify-center'>
     {imagePath.length > 0 ? imagePath.map((src, index) => (
-      <div key={index} className=''>
-        <img src={src} alt={`Carousel Slide ${index}`} className=" h-full text-center  " />
-      </div>
-    )) : null}
+  <div key={index}>
+    <img src={src} alt={`Carousel Slide ${index}`} className="h-full text-center" />
+  </div>
+)) : null}
+
   </Carousel>
 </div>
 

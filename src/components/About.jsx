@@ -15,9 +15,11 @@ const About = () => {
      </div>
 
      <div className=' sm:flex justify-center items-center px-4 gap-x-20'>
+     <img src={drone} alt=""  className='w-full sm:w-2/5 flex sm:hidden  '/>
+
         <p className='text-white  font-poppin text-[0.64rem] sm:text-sm 5/6 sm:w-2/6  '> 
         Our expertise goes beyond traditional photography with advanced drone services, adding a unique perspective to your special day. We combine creativity, technology, and an eye for detail to deliver exceptional quality in every shot.         </p>
-     <img src={drone} alt=""  className='w-full sm:w-2/5   '/>
+     <img src={drone} alt=""  className='w-full sm:w-2/5  hidden sm:flex '/>
 
      </div>
        
