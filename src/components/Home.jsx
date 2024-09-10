@@ -6,7 +6,6 @@ const images=import.meta.glob('../assets/carousel-Images/*.{jpg,png,jpeg,svg,web
 
 const Home = () => {
     const [imagePath,SetimagePath]=useState([])
-
     useEffect(() => {
         // Convert the imported images to an array of paths
         const loadImages = async () => {
@@ -20,7 +19,7 @@ const Home = () => {
         };
       
         loadImages();
-      }, []);  // Empty dependency array to prevent infinite loop
+      }, []);  
       
       console.log(imagePath);
 
