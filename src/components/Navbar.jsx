@@ -2,14 +2,25 @@ import React, { useState } from 'react'
 import Logo from '../assets/logo/Group 9.png'
 import { BiMenuAltRight } from "react-icons/bi"
 import { AiTwotoneCloseCircle } from "react-icons/ai"
-import {Link} from "react-scroll"
+import {Link} from "react-router-dom"
 const Navbar = () => {
   const navItems = [
-    { name: "Home" },
-    { name: "About" },
-    {name: "Gallery"},
-    { name: "Services" },
-    { name: "Contact us" }
+    { name: "HOME" ,
+      link:"/"
+    },
+    { name: "ABOUT",
+      link:"/About"
+
+     },
+    {name: "GALLERY",
+      link:"/Gallery"
+    },
+    { name: "SERVICE",
+      link:"Service"
+     },
+    { name: "CONTACT US",
+      link:"Contact-us"
+     }
 
   ];
 
@@ -17,10 +28,10 @@ const Navbar = () => {
 
   return (
     <header className=''>
-      <nav className='flex items-center justify-between py-4 px-28 font-frenchCanon bg-black '>
+      <nav className='flex items-center justify-between py-6 px-8 md:px-8 font-frenchCanon font-imprint h-[100px] '>
         
-      <div className='flex'>
-          <img src={Logo} alt="" className='w-28'/>
+      <div className=''>
+          <img src={Logo} alt="" className='w-20 sm:w-28'/>
         </div>
 
         {/* Mobile Menu Button */}
@@ -32,9 +43,9 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className='hidden sm:flex ml-auto gap-x-[62px] text-[24px] mr-[62px]  item-center'>
+        <ul className='hidden sm:flex ml-auto gap-x-6 lg:gap-x-16 text-sm md:text-lg lg:text-2xl mr-[62px]'>
           {navItems.map((item) => (
-             <Link key={item.name} to={item.name}  smooth={true} duration={500}>
+             <Link key={item.link} to={item.link} >
              <li  className={`text-white`}>
              <button> {item.name}</button>
              </li>
@@ -43,7 +54,7 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu */}
-        <ul className={`fixed top-0 right-0 w-2/4 h-screen bg-[#0b090aab] flex flex-col items-center justify-start py-4 space-y-6 text-2xl  text-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'hidden'} sm:hidden z-40`}>
+        <ul className={`fixed top-0 right-0 w-40 h-screen bg-[#0b090aab] flex flex-col items-start px-4 justify-start  text-left   py-4 space-y-6 text-sm  text-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'hidden'} sm:hidden z-40`}>
         <button
           className='sm:hidden flex w-full px-4  items-center  z-50 text-black  justify-start '
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -52,9 +63,9 @@ const Navbar = () => {
         </button>
           {navItems.map((item) => (
            
-             <Link key={item.name} to={item.name}  smooth={true} duration={1000}>
+             <Link key={item.link} to={item.link}  >
               <ul>
-            <li  className='hover:underline'>
+            <li  className='hover:underline text-left'>
             <button> {item.name}</button>
            
             </li>
