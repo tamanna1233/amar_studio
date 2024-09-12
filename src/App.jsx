@@ -8,7 +8,7 @@ import Loading from './components/Loading';
 
 const App = () => {
 return (
-    <div className="bg-black">
+    <div className="bg-black  min-h-screen">
       <Navbar />
       <Outlet />
     </div>

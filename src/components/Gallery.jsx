@@ -28,7 +28,7 @@ useEffect(()=>{
   return (
     <>
     <div className=''>
-    <div className='text-yellow-300 text-center  py-4 text-xs sm:text-2xl md:text-4xl font-imprint'>Gallery</div>
+    <div className='text-yellow-300 text-center  py-4 text-lg sm:text-2xl md:text-4xl font-imprint'>Gallery</div>
     <div className='flex justify-center py-4'>
         <div className='grid grid-cols-2 sm:grid-cols-4 text-white  gap-x-4 gap-y-8 px-4  '>
     {/* <div className='bg-pink-200 '><img src={image1} alt="" /></div>
@@ -39,10 +39,11 @@ useEffect(()=>{
     <div className='bg-white'><img src={image5} alt="" /></div>
     <div className='bg-orange-200'><img src={image6} alt="" /></div>
     <div className='bg-gray-200'><img src={image7} alt="" /></div> */}
+    
      {
     imagePath.length>0?imagePath.map((src,index)=>(
         <div key={index}>
-            <img src={src} alt={`images ${index}`} className='grayscale hover:grayscale-0 cursor-pointer'/>
+            <img src={src} alt={`images ${index}`} className='grayscale hover:grayscale-0 cursor-pointer hover:scale-105 ' loading='lazy'/>
 
         </div>
     )):null

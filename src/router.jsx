@@ -2,6 +2,7 @@
 import { lazy } from "react"
 import {createBrowserRouter} from "react-router-dom"
 import Service from "./components/Service.jsx"
+import Contactus from "./components/Contact-us.jsx"
 
 
 const App =lazy(()=>import("./App"))
@@ -15,7 +16,7 @@ const router=createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:(<div><Home/> <Service/> <About/></div>)
+                element:(<div><Home/> <About/> <Service/>  <Contactus/></div>)
 
             },
             {
@@ -27,10 +28,15 @@ const router=createBrowserRouter([
                 path:"/Gallery",
                 element:<Gallery/>
 
-            },{
+            },
+            {
             path:"/service",
             element:<Service/>
-        }
+        },
+         {
+            path:"/Contact-us",
+            element:<Contactus/>
+         }
         ]
     }
 ])

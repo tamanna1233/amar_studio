@@ -2,9 +2,10 @@ import React from 'react'
 import logo from '../assets/logo/group 11.png'
 import drone from "../assets/logo/drone.png"
 const About = () => {
+  
   return (
     <div className='flex flex-col items-center justify-center  py-4 px-8'>
-     <div className='text-[#FFD700] text-xs sm:text-2xl md:text-4xl font-imprint'>
+     <div className='text-[#FFD700] text-lg sm:text-2xl md:text-4xl font-imprint'>
       About us</div> 
       <div className='flex-col sm:flex items-center justify-center py-8 sm:py-32 gap-y-8'>
      
