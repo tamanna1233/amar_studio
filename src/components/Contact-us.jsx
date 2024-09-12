@@ -19,7 +19,7 @@ function Contactus() {
 
         {/* Contact Form */}
         <div className='flex justify-center w-full'>
-          <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full'>
+          <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full  lg:w-[70%]'>
 
           <input type="hidden" name="access_key" value="1065f29e-0575-4e35-90e0-55fcf68b5661" />
 
