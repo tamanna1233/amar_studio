@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo/balkar ji.jpg'
+import logo from '../assets/logo/balkar ji.webp'
 import drone from "../assets/logo/drone.png"
 const About = () => {
   

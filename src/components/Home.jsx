@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-const images=import.meta.glob('../assets/carousel-Images/*.{jpg,png,jpeg,svg,webp}')
+const images = import.meta.glob('../assets/carousel-Images/*.{WEBP,webp,jpg,png,jpeg,svg}')
 
 const Home = () => {
     const [imagePath,SetimagePath]=useState([])

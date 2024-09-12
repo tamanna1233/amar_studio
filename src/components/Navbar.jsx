@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '../assets/logo/Group 9.png'
+import Logo from '../assets/logo/Group 9 1.png'
 import { BiMenuAltRight } from "react-icons/bi"
 import { AiTwotoneCloseCircle } from "react-icons/ai"
 import {Link} from "react-router-dom"

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/balkar ji.jpg';
+import logo from '../assets/logo/balkar ji.webp';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { BiLogoWhatsapp } from 'react-icons/bi';
 import { BiLogoInstagram } from 'react-icons/bi';
