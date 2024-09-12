@@ -14,7 +14,7 @@ function Contactus() {
       <div className='flex flex-col sm:flex-row justify-center w-full  items-center py-8 space-y-8 sm:space-y-0 sm:space-x-8'>
         {/* Logo */}
         <div className='flex justify-center'>
-          <img src={logo} alt="Company logo" className='w-40 sm:w-full h-full' loading='lazy' />
+          <img src={logo} alt="Company logo" className='w-40 sm:w-full h-auto' loading='lazy' />
         </div>
 
         {/* Contact Form */}
@@ -78,13 +78,12 @@ function Contactus() {
             />
 
             {/* Date */}
-            <label htmlFor="date">Date:</label>
+            <label htmlFor="Date">Date:</label>
             <input
               type="date"
               name="date"
               className='bg-white rounded-xl text-black indent-2 mb-2'
               required
-
             />
 
             <button className='px-2 bg-yellow-300  text-black mt-4 text-center rounded-xl'>
