@@ -58,7 +58,7 @@ const Home = () => {
     className='   flex flex-col items-center justify-center'>
     {imagePath.length > 0 ? imagePath.map((src, index) => (
   <div key={index}>
-    <img src={src} alt={`Carousel Slide ${index}`} className="text-center w-[80%] h-full"/>
+    <img src={src} alt={`Carousel Slide ${index}`} className="text-center w-[80%] h-full"  loading='lazy'/>
   </div>
 )) : null}
 
