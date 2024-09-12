@@ -43,7 +43,7 @@ useEffect(()=>{
      {
     imagePath.length>0?imagePath.map((src,index)=>(
         <div key={index}>
-            <img src={src} alt={`images ${index}`} className='grayscale hover:grayscale-0 cursor-pointer hover:scale-105 ' loading='lazy'/>
+            <img src={src} alt={`images ${index}`} className='grayscale hover:grayscale-0 cursor-pointer hover:scale-105 h-full  w-full' loading='lazy'/>
 
         </div>
     )):null
