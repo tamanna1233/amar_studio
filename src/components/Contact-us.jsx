@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/group 11.png';
+import logo from '../assets/logo/balkar ji.jpg';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { BiLogoWhatsapp } from 'react-icons/bi';
 import { BiLogoInstagram } from 'react-icons/bi';
@@ -21,7 +21,7 @@ function Contactus() {
         <div className='flex justify-center w-full'>
           <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full'>
 
-          <input type="hidden" name="access_key" value="e632fd9c-4503-482a-bf46-9f3e5606d4fd" />
+          <input type="hidden" name="access_key" value="1065f29e-0575-4e35-90e0-55fcf68b5661" />
 
             {/* Name */}
             <label htmlFor="name">Name:</label>
@@ -97,21 +97,23 @@ function Contactus() {
       {/* address */}
       <div className='  items-center sm:flex justify-evenly text-white py-16  font-poppin'>
           <div className='flex flex-col'>
-            <p className=' text-center text-yellow-300 font-imprint'>Address</p>
-            <div className=''>Amar Studio main bazzar near saklani clinic sandhol </div>
-              <div>state: Himachal pradesh</div>
-            <div> distt : Mandi </div> 
-              <div>pincode:</div> 
+            <p className=' text-center text-yellow-300 font-imprint text-lg'>Address</p>
+            <div className=''> Balkar Amar Studio Sandhole main bazzar near saklani clinic Sandhole </div>
+              <div>State: Himachal pradesh</div>
+            <div> Distt : Mandi </div> 
+              <div>Pincode:176090</div> 
             
           </div>
           <div>
-            <p className=' text-center text-yellow-300 font-imprint'>contact us</p>
-            <p className=''>email: <a href="mailto:amarstuduio.gmail.com">amarstuduio.gmail.com</a></p>
-            <p className=''>phone : <a href="tel:+918894097320">+91 8894097320 </a></p>
+            <p className=' text-center text-yellow-300 font-imprint text-lg'>contact us</p>
+            <p className=''>email: <a href="mailto:balkar.amarstudio@gmail.com">balkar.amarstudio@gmail.com</a></p>
+            <p className=''>phone : <a href="tel:+919418640694">+91 9418640694 (Balkar) </a></p>
+            <p className=''>phone : <a href="tel:+918437765469">+91 8437765469 (Dikshant) </a></p>
+
             <div className='flex gap-x-6 py-2 '>
-            <a href=""> <BiLogoFacebook size={25}/> </a>  
-            <a href={`https://wa.me/${+918894097320}?text=Hi there! I am interested in your photography services. Can we discuss my requirements?`} target='_blank'>< BiLogoWhatsapp size={25}/></a> 
-           <a href=""><BiLogoInstagram size={25}/></a>  
+            <a href="https://www.facebook.com/balkar.chand.754" target='_blank'> <BiLogoFacebook size={25}/> </a>  
+            <a href={`https://wa.me/${+919418640694}?text=Hi there! I am interested in your photography services. Can we discuss my requirements?`} target='_blank'>< BiLogoWhatsapp size={25}/></a> 
+           <a href="https://www.instagram.com/balkarchand2022/" target='_blank'><BiLogoInstagram size={25}/></a>  
               
             </div>
           </div>
