@@ -46,9 +46,11 @@ const Navbar = () => {
         <ul className='hidden sm:flex ml-auto gap-x-6 lg:gap-x-16 text-sm md:text-lg lg:text-2xl mr-[62px]'>
           {navItems.map((item) => (
              <Link key={item.link} to={item.link} >
+              <ul>
              <li  className={`text-white`}>
              <button> {item.name}</button>
              </li>
+             </ul>
              </Link> 
           ))}
         </ul>
@@ -81,63 +83,3 @@ const Navbar = () => {
 export default Navbar
 
 
-// import React from 'react'
-// import { NavLink } from 'react-router-dom';
-// import logo from '../assets/logo/Group 9.png'
-// const Navbar = () => {
- 
-//   const navItems= [
-//     {
-//       name: 'Home',
-//        slug: '/',
-//       },
-//       {
-//         name: 'Gallery',
-//         slug: '/gallery'
-//       },
-//       {
-//         name: 'Services',
-//         slug: '/service'
-//       },
-//        {
-//         name: 'About',
-//         slug: '/about'
-//       },
-//         {
-//           name: 'Contact',
-//           slug: '/contact'
-//         }
-      
-//           ]
-  
-//   return (
-//     <>
-//     <header className='text-white   py-2 flex'>
-//       <nav className='flex'>
-//         <div className='ml-10 px-4 '>
-//           <img src={logo} alt="" className='w-24 ml-14'/>
-//         </div>
-//         <ul className='flex ml-auto items-center mr-4 gap-x-12'>
-         
-         
-//           {
-//           navItems.map((item) => (
-//             <li key={item.slug}>
-// <div className='text-white'>  
-//         {/* <NavLink to={item.slug} className='flex items-center gap-x-2'>
-//         {item.name}
-//         </NavLink> */}
-//         {item.name}
-// </div>
-//             </li>
-//           ))
-//           }
-//           </ul>
-//       </nav>
-//     </header>
-      
-//     </>
-//   )
-// }
-
-// export default Navbar

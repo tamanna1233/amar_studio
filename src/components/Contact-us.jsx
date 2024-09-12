@@ -78,11 +78,12 @@ function Contactus() {
             />
 
             {/* Date */}
-            <label htmlFor="Date">Date:</label>
+            <label htmlFor="date">Date:</label>
             <input
               type="date"
               name="date"
               className='bg-white rounded-xl text-black indent-2 mb-2'
+              placeholder='enter date'
               required
             />
 
