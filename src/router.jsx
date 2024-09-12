@@ -1,8 +1,9 @@
 
-import { lazy } from "react"
+import { lazy, Suspense } from "react"
 import {createBrowserRouter} from "react-router-dom"
 import Service from "./components/Service.jsx"
 import Contactus from "./components/Contact-us.jsx"
+import Loading from "./components/Loading.jsx"
 
 
 const App =lazy(()=>import("./App"))
@@ -26,7 +27,7 @@ const router=createBrowserRouter([
             },
             {
                 path:"/Gallery",
-                element:<Gallery/>
+                element:<Suspense fallback={<Loading/>}><Gallery/></Suspense>
 
             },
             {
