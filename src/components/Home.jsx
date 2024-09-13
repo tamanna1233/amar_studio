@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -40,7 +40,7 @@ const Home = () => {
     </div>
      {/* subtext of page  */}
     <p className='text-white  text-left font-light text-xs sm:text-sm md:text-xl px-8 sm:px-20 md:px-40 sm:text-center font-poppin py-4 '>
-  At amar studio, we believe that every moment deserves to be cherished forever. Whether it's your wedding day, a maternity shoot, or your baby’s first steps, we are here to capture those priceless moments with creativity and precision. Our team of skilled photographers specializes in wedding, pre-wedding, maternity, baby, and drone photography, ensuring that every frame tells your unique story. Let us be part of your journey, creating memories that will last a lifetime.
+  At amar studio, we believe that every moment deserves to be cherished forever. Whether it&apos;s your wedding day, a maternity shoot, or your baby &apos; s first steps, we are here to capture those priceless moments with creativity and precision. Our team of skilled photographers specializes in wedding, pre-wedding, maternity, baby, and drone photography, ensuring that every frame tells your unique story. Let us be part of your journey, creating memories that will last a lifetime.
   </p>
 
   {/* image crousel */}
@@ -58,7 +58,7 @@ const Home = () => {
     className='   flex flex-col items-center justify-center'>
     {imagePath.length > 0 ? imagePath.map((src, index) => (
   <div key={index}>
-    <img src={src} alt={`Carousel Slide ${index}`} className="text-center w-[80%] h-full"  loading='lazy'/>
+    <img src={src} alt={`Carousel Slide ${index}`} className="text-center w-[80%] h-full"  />
   </div>
 )) : null}
 

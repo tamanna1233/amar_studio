@@ -1,14 +1,15 @@
 
 import { lazy, Suspense } from "react"
 import {createBrowserRouter} from "react-router-dom"
- const Service=lazy(()=>import("./components/Service.jsx")) 
- const Contactus = lazy(()=>import ("./components/Contact-us.jsx")) 
-const Loading=lazy(()=>import("./components/Loading.jsx"))
+ const Service=lazy(()=>import("./Service.jsx")) 
+ const Contactus = lazy(()=>import ("./Contact-us.jsx")) 
+const Loading=lazy(()=>import("./Loading.jsx"))
 
-const App =lazy(()=>import("./App"))
-const Home =lazy(()=>import("./components/Home.jsx"))
-const About=lazy(()=>import("./components/About.jsx"))
-const Gallery =lazy(()=>import("./components/Gallery.jsx"))
+const App =lazy(()=>import("../App.jsx"))
+const Home =lazy(()=>import("./Home.jsx"))
+const About=lazy(()=>import("./About.jsx"))
+const Gallery =lazy(()=>import("./Gallery.jsx"))
+
 const router=createBrowserRouter([
     {
         path:"/",
@@ -16,7 +17,7 @@ const router=createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:(<div><Home/> <About/> <Service/>  <Contactus/></div>)
+                element:(<div><Home/> ,<About/> ,<Service/> , <Contactus/></div>)
 
             },
             {

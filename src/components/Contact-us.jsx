@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../assets/logo/balkar ji.webp';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { BiLogoWhatsapp } from 'react-icons/bi';

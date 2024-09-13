@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteImagemin from 'vite-plugin-imagemin';
+import imageminWebp from 'imagemin-webp';
 
 export default defineConfig({
   plugins: [
@@ -31,6 +32,9 @@ export default defineConfig({
           },
         ],
       },
+      webp: imageminWebp({
+        quality: 75, // Set the quality of the WebP images
+      }),
     }),
   ],
 });
