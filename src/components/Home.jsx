@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-const images=import.meta.glob('../assets/carousel-Images/*.{jpg,png,jpeg,svg,webp}')
+const images = import.meta.glob('../assets/carousel-Images/*.{WEBP,webp,jpg,png,jpeg,svg}')
 
 const Home = () => {
     const [imagePath,SetimagePath]=useState([])
@@ -58,7 +58,7 @@ const Home = () => {
     className='   flex flex-col items-center justify-center'>
     {imagePath.length > 0 ? imagePath.map((src, index) => (
   <div key={index}>
-    <img src={src} alt={`Carousel Slide ${index}`} className="text-center" />
+    <img src={src} alt={`Carousel Slide ${index}`} className="text-center w-[80%] h-full"  loading='lazy'/>
   </div>
 )) : null}
 

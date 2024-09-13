@@ -1,10 +1,9 @@
 
 import { lazy, Suspense } from "react"
 import {createBrowserRouter} from "react-router-dom"
-import Service from "./components/Service.jsx"
-import Contactus from "./components/Contact-us.jsx"
-import Loading from "./components/Loading.jsx"
-
+ const Service=lazy(()=>import("./components/Service.jsx")) 
+ const Contactus = lazy(()=>import ("./components/Contact-us.jsx")) 
+const Loading=lazy(()=>import("./components/Loading.jsx"))
 
 const App =lazy(()=>import("./App"))
 const Home =lazy(()=>import("./components/Home.jsx"))
@@ -22,7 +21,7 @@ const router=createBrowserRouter([
             },
             {
                 path:"/About",
-                element:<About/>
+                element:<Suspense fallback={<Loading/>}><About/></Suspense>
 
             },
             {
@@ -32,11 +31,11 @@ const router=createBrowserRouter([
             },
             {
             path:"/service",
-            element:<Service/>
+            element:<Suspense fallback={<Loading/>}><Service/> </Suspense>
         },
          {
             path:"/Contact-us",
-            element:<Contactus/>
+            element:<Suspense fallback={<Loading/>}><Contactus/></Suspense>
          }
         ]
     }

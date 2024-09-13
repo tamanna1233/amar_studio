@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/balkar ji.jpg';
+import logo from '../assets/logo/balkar ji.webp';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { BiLogoWhatsapp } from 'react-icons/bi';
 import { BiLogoInstagram } from 'react-icons/bi';
@@ -14,12 +14,12 @@ function Contactus() {
       <div className='flex flex-col sm:flex-row justify-center w-full  items-center py-8 space-y-8 sm:space-y-0 sm:space-x-8'>
         {/* Logo */}
         <div className='flex justify-center'>
-          <img src={logo} alt="Company logo" className='w-40 sm:w-full' />
+          <img src={logo} alt="Company logo" className='w-40 sm:w-full h-auto' loading='lazy' />
         </div>
 
         {/* Contact Form */}
         <div className='flex justify-center w-full'>
-          <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full'>
+          <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full  lg:w-[70%]'>
 
           <input type="hidden" name="access_key" value="1065f29e-0575-4e35-90e0-55fcf68b5661" />
 
@@ -83,8 +83,8 @@ function Contactus() {
               type="date"
               name="date"
               className='bg-white rounded-xl text-black indent-2 mb-2'
+              placeholder='enter date'
               required
-
             />
 
             <button className='px-2 bg-yellow-300  text-black mt-4 text-center rounded-xl'>
