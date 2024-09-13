@@ -1,19 +1,16 @@
 import React from 'react'
-<<<<<<< HEAD
 import image from '../assets/ServiceImg/image 2.png'
 import image1 from '../assets/ServiceImg/img23..jpg'
 import image3 from '../assets/ServiceImg/image 4.png'
 import image4 from '../assets/ServiceImg/image 5.png'
 import image5 from '../assets/ServiceImg/image 6.png'
 import image6 from '../assets/ServiceImg/image 7.png'
-=======
 import image from '../assets/ServiceImg/image 2.webp'
 import image1 from '../assets/ServiceImg/image 3.webp'
 import image3 from '../assets/ServiceImg/image 4.webp'
 import image4 from '../assets/ServiceImg/image 5.webp'
 import image5 from '../assets/ServiceImg/image 6.webp'
 import image6 from '../assets/ServiceImg/image 7.webp'
->>>>>>> 247547e90766bf4222b6f3da77a0d04dbf505965
 
 
 
@@ -23,27 +20,27 @@ const Service = () => {
      const serviceArr = [
         {
             service: "Wedding Photography",
-            image:image
-        },
-        {
-            service: "Pre-wedding Photography",
             image:image1
         },
         {
-            service: "Maternity Photography",
+            service: "Pre-wedding Photography",
             image:image3
         },
         {
-            service: "Baby Photography",
+            service: "Maternity Photography",
             image:image4
         },
         {
-            service: " Drone Videography",
+            service: "Baby Photography",
             image:image5
         },
         {
-            service: "Cinematic Videography",
+            service: " Drone Videography",
             image:image6
+        },
+        {
+            service: "Cinematic Videography",
+            image:image7
         },
      ]
 
