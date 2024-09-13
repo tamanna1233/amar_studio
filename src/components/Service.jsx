@@ -1,16 +1,12 @@
 import React from 'react'
-import image from '../assets/ServiceImg/image 2.png'
+// import image from '../assets/ServiceImg/image 2.png'
 import image1 from '../assets/ServiceImg/img23..jpg'
-import image3 from '../assets/ServiceImg/image 4.png'
-import image4 from '../assets/ServiceImg/image 5.png'
-import image5 from '../assets/ServiceImg/image 6.png'
-import image6 from '../assets/ServiceImg/image 7.png'
-import image from '../assets/ServiceImg/image 2.webp'
-import image1 from '../assets/ServiceImg/image 3.webp'
 import image3 from '../assets/ServiceImg/image 4.webp'
 import image4 from '../assets/ServiceImg/image 5.webp'
 import image5 from '../assets/ServiceImg/image 6.webp'
 import image6 from '../assets/ServiceImg/image 7.webp'
+import image2 from '../assets/ServiceImg/image 3.webp'
+
 
 
 
@@ -24,23 +20,23 @@ const Service = () => {
         },
         {
             service: "Pre-wedding Photography",
-            image:image3
+            image:image2
         },
         {
             service: "Maternity Photography",
-            image:image4
+            image:image3
         },
         {
             service: "Baby Photography",
-            image:image5
+            image:image4
         },
         {
             service: " Drone Videography",
-            image:image6
+            image:image5
         },
         {
             service: "Cinematic Videography",
-            image:image7
+            image:image6
         },
      ]
 
