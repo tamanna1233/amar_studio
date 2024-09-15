@@ -39,7 +39,8 @@ const Loading = lazy(() => import('./Loading.jsx'));const Gallery = () => {
                 </div>
               ))
             ) : (
-              <Loading/>
+              <div className='flex justify-center items-center w-full h-screen'><Loading/></div>
+              
             )}
           </div>
         </div>

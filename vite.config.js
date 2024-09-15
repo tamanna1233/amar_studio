@@ -33,7 +33,7 @@ export default defineConfig({
         ],
       },
       webp: imageminWebp({
-        quality: 75, // Set the quality of the WebP images
+        quality: 50, // Set the quality of the WebP images
       }),
     }),
   ],
