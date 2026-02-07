@@ -1,45 +1,73 @@
+import { lazy, Suspense } from "react";
+import { createBrowserRouter } from "react-router-dom";
+import Loading from "./Loading.jsx";
 
-import { lazy, Suspense } from "react"
-import {createBrowserRouter} from "react-router-dom"
- const Service=lazy(()=>import("./Service.jsx")) 
- const Contactus = lazy(()=>import ("./Contact-us.jsx")) 
-const Loading=lazy(()=>import("./Loading.jsx"))
+const App = lazy(() => import("../App.jsx"));
+const Home = lazy(() => import("./Home.jsx"));
+const About = lazy(() => import("./About.jsx"));
+const Service = lazy(() => import("./Service.jsx")); // Ensure casing matches filename
+const Gallery = lazy(() => import("./Gallery.jsx"));
+const ContactUs = lazy(() => import("./Contact-us.jsx")); // Ensure casing matches filename
 
-const App =lazy(()=>import("../App.jsx"))
-const Home =lazy(()=>import("./Home.jsx"))
-const About=lazy(()=>import("./About.jsx"))
-const Gallery =lazy(()=>import("./Gallery.jsx"))
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <App />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/gallery",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Gallery />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/service",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Service />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact-us",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <ContactUs />
+          </Suspense>
+        ),
+      },
+       {
+        path: "*",
+        element: (
+             <div className="min-h-screen flex items-center justify-center bg-black text-gold text-2xl font-title">
+                404 - Page Not Found
+             </div>
+        ),
+      },
+    ],
+  },
+]);
 
-const router=createBrowserRouter([
-    {
-        path:"/",
-        element:<App/>,
-        children:[
-            {
-                path:"/",
-                element:(<div><Home/> ,<About/> ,<Service/> , <Contactus/></div>)
-
-            },
-            {
-                path:"/About",
-                element:<Suspense fallback={<Loading/>}><About/></Suspense>
-
-            },
-            {
-                path:"/Gallery",
-                element:<Suspense fallback={<Loading/>}><Gallery/></Suspense>
-
-            },
-            {
-            path:"/service",
-            element:<Suspense fallback={<Loading/>}><Service/> </Suspense>
-        },
-         {
-            path:"/Contact-us",
-            element:<Suspense fallback={<Loading/>}><Contactus/></Suspense>
-         }
-        ]
-    }
-])
-
-export default router
+export default router;

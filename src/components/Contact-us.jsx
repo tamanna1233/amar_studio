@@ -1,125 +1,169 @@
-import logo from '../assets/logo/balkar ji.webp';
-import { BiLogoFacebook } from 'react-icons/bi';
-import { BiLogoWhatsapp } from 'react-icons/bi';
-import { BiLogoInstagram } from 'react-icons/bi';
-function Contactus() {
+import { motion } from 'framer-motion';
+import { BiLogoFacebook, BiLogoWhatsapp, BiLogoInstagram, BiMap, BiPhone, BiEnvelope } from 'react-icons/bi';
+import SEO from './SEO';
+
+const ContactUs = () => {
+    // Schema for LocalBusiness is handled via SEO component
+    
   return (
-    <div className='px-8 sm:px-20 md:px-20 lg:px-40'>
-      {/* Title */}
-      <div className='text-yellow-300 text-center py-4 text-lg sm:text-2xl md:text-4xl font-imprint'>
-        Contact Us
-      </div>
+    <>
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Amar Studio for bookings and inquiries."
+      />
 
-      <div className='flex flex-col sm:flex-row justify-center w-full  items-center py-8 space-y-8 sm:space-y-0 sm:space-x-8'>
-        {/* Logo */}
-        <div className='flex justify-center'>
-          <img src={logo} alt="Company logo" className='w-40 sm:w-full h-auto' />
-        </div>
+      <section className="bg-black-rich min-h-screen py-24 px-6 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold-dark/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl -z-10" />
 
-        {/* Contact Form */}
-        <div className='flex justify-center w-full'>
-          <form action="https://api.web3forms.com/submit"  method="POST" className='text-white flex flex-col  w-full  lg:w-[70%]'>
+        <div className="container mx-auto max-w-6xl">
+            <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+            >
+            <h1 className="text-4xl md:text-6xl font-title text-gold mb-4">Get In Touch</h1>
+            <p className="text-gray-400 font-light">We&apos;d love to hear from you. Let&apos;s create something beautiful together.</p>
+            </motion.div>
 
-          <input type="hidden" name="access_key" value="1065f29e-0575-4e35-90e0-55fcf68b5661" />
-
-            {/* Name */}
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              name="name"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='Enter your name'
-              required
-            />
-
-            {/* Email */}
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='Enter your email'
-              required
-
-            />
-
-            {/* Phone */}
-            <label htmlFor="phone">Phone No:</label>
-            <input
-              type="tel"
-              name="phone"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='Enter your phone number'
-              required
-
-            />
-
-            {/* Service */}
-            <label htmlFor="service">Service:</label>
-            <input
-              type="text"
-              name="service"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='Enter the service you want'
-              required
-
-            />
-
-            {/* Location */}
-            <label htmlFor="location">Location:</label>
-            <input
-              type="text"
-              name="location"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='Enter your location'
-              required
-
-            />
-
-            {/* Date */}
-            <label htmlFor="date">Date:</label>
-            <input
-              type="date"
-              name="date"
-              className='bg-white rounded-xl text-black indent-2 mb-2'
-              placeholder='enter date'
-              required
-            />
-
-            <button className='px-2 bg-yellow-300  text-black mt-4 text-center rounded-xl'>
-              Submit
-            </button>
-          </form>
-        </div>
-
-      </div>
-      {/* address */}
-      <div className='  items-center sm:flex justify-evenly text-white py-16  font-poppin'>
-          <div className='flex flex-col'>
-            <p className=' text-center text-yellow-300 font-imprint text-lg'>Address</p>
-            <div className=''> Balkar Amar Studio Sandhole main bazzar near saklani clinic Sandhole </div>
-              <div>State: Himachal pradesh</div>
-            <div> Distt : Mandi </div> 
-              <div>Pincode:176090</div> 
+            <div className="grid lg:grid-cols-2 gap-16">
             
-          </div>
-          <div>
-            <p className=' text-center text-yellow-300 font-imprint text-lg'>contact us</p>
-            <p className=''>email: <a href="mailto:balkar.amarstudio@gmail.com">balkar.amarstudio@gmail.com</a></p>
-            <p className=''>phone : <a href="tel:+919418640694">+91 9418640694 (Balkar) </a></p>
-            <p className=''>phone : <a href="tel:+918437765469">+91 8437765469 (Dikshant) </a></p>
+            {/* Contact Form */}
+            <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="bg-black-soft p-8 rounded-2xl shadow-xl border border-gray-800"
+            >
+                <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+                <input type="hidden" name="access_key" value="1065f29e-0575-4e35-90e0-55fcf68b5661" />
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Name</label>
+                    <input type="text" name="name" required placeholder="John Doe" 
+                        className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors" />
+                    </div>
+                    <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Phone</label>
+                    <input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX" 
+                        className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors" />
+                    </div>
+                </div>
 
-            <div className='flex gap-x-6 py-2 '>
-            <a href="https://www.facebook.com/balkar.chand.754" target='_blank'> <BiLogoFacebook size={25}/> </a>  
-            <a href={`https://wa.me/${+919418640694}?text=Hi there! I am interested in your photography services. Can we discuss my requirements?`} target='_blank'>< BiLogoWhatsapp size={25}/></a> 
-           <a href="https://www.instagram.com/balkarchand2022/" target='_blank'><BiLogoInstagram size={25}/></a>  
-              
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Email</label>
+                    <input type="email" name="email" required placeholder="john@example.com" 
+                    className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors" />
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Service Needed</label>
+                    <select name="service" required 
+                    className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors appearance-none">
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Wedding">Wedding Photography</option>
+                        <option value="Pre-Wedding">Pre-Wedding Shoot</option>
+                        <option value="Maternity">Maternity Shoot</option>
+                        <option value="Baby">Baby Photography</option>
+                        <option value="Drone">Drone Videography</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Event Date</label>
+                    <input type="date" name="date" required 
+                    className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors" />
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-gold-light uppercase tracking-wider">Location</label>
+                    <input type="text" name="location" placeholder="City, Venue..." required
+                    className="w-full bg-black-rich border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors" />
+                </div>
+
+                <button type="submit" 
+                    className="w-full bg-gold text-black font-bold py-4 rounded-lg hover:bg-gold-light transition-all transform hover:-translate-y-1 shadow-lg hover:shadow-gold/20 uppercase tracking-widest text-sm">
+                    Send Inquiry
+                </button>
+                </form>
+            </motion.div>
+
+            {/* Info Section */}
+            <motion.div 
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="space-y-12"
+            >
+                {/* Address Card */}
+                <div className="bg-black-soft/50 p-6 rounded-xl border border-gray-800 backdrop-blur-sm">
+                   <div className="flex items-start space-x-4">
+                        <div className="bg-gold/10 p-3 rounded-full text-gold">
+                            <BiMap size={24} />
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-title text-white mb-2">Visit Us</h3>
+                            <p className="text-gray-400 font-light">
+                                Jeet Photostate & Studio<br />
+                                Sandhole Main Bazaar, Near Saklani Clinic<br />
+                                Distt. Mandi, Himachal Pradesh - 176090
+                            </p>
+                        </div>
+                   </div>
+                </div>
+
+                {/* Contact Card */}
+                <div className="bg-black-soft/50 p-6 rounded-xl border border-gray-800 backdrop-blur-sm">
+                   <div className="flex items-start space-x-4">
+                        <div className="bg-gold/10 p-3 rounded-full text-gold">
+                            <BiPhone size={24} />
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-title text-white mb-2">Call Us</h3>
+                            <div className="flex flex-col space-y-2">
+                                <a href="tel:+919418640694" className="text-gray-400 hover:text-gold-light transition-colors">+91 94186 40694 (Balkar Chand)</a>
+                                <a href="tel:+918437765469" className="text-gray-400 hover:text-gold-light transition-colors">+91 84377 65469 (Dikshant)</a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+
+                {/* Social Card */}
+                <div className="bg-black-soft/50 p-6 rounded-xl border border-gray-800 backdrop-blur-sm">
+                   <div className="flex items-start space-x-4">
+                        <div className="bg-gold/10 p-3 rounded-full text-gold">
+                             <BiEnvelope size={24} />
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-title text-white mb-4">Connect With Us</h3>
+                            <div className="flex space-x-6">
+                                <a href="https://www.facebook.com/balkar.chand.754" target='_blank' rel="noreferrer" 
+                                    className="p-3 bg-blue-600/20 text-blue-500 rounded-full hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110">
+                                    <BiLogoFacebook size={28}/> 
+                                </a>
+                                <a href={`https://wa.me/919418640694?text=Hi there! I am interested in your photography services.`} target='_blank' rel="noreferrer"
+                                    className="p-3 bg-green-600/20 text-green-500 rounded-full hover:bg-green-600 hover:text-white transition-all transform hover:scale-110">
+                                    <BiLogoWhatsapp size={28}/>
+                                </a>
+                                <a href="https://www.instagram.com/balkarchand2022/" target='_blank' rel="noreferrer"
+                                    className="p-3 bg-pink-600/20 text-pink-500 rounded-full hover:bg-pink-600 hover:text-white transition-all transform hover:scale-110">
+                                    <BiLogoInstagram size={28}/>
+                                </a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+
+            </motion.div>
             </div>
-          </div>
-
-         </div>
-    </div>
+        </div>
+      </section>
+    </>
   );
-}
+};
 
-export default Contactus;
+export default ContactUs;

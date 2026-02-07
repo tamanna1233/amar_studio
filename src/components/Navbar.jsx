@@ -1,85 +1,126 @@
-import { useState } from 'react'
-import Logo from '../assets/logo/Group 9 1.png'
-import { BiMenuAltRight } from "react-icons/bi"
-import { AiTwotoneCloseCircle } from "react-icons/ai"
-import {Link} from "react-router-dom"
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import Logo from '../assets/logo/Group91.png'; // Ensure consistent casing if needed
+
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
   const navItems = [
-    { name: "HOME" ,
-      link:"/"
-    },
-    { name: "ABOUT",
-      link:"/About"
-
-     },
-    {name: "GALLERY",
-      link:"/Gallery"
-    },
-    { name: "SERVICE",
-      link:"Service"
-     },
-    { name: "CONTACT US",
-      link:"Contact-us"
-     }
-
+    { name: "HOME", link: "/" },
+    { name: "ABOUT", link: "/about" },
+    { name: "GALLERY", link: "/gallery" },
+    { name: "SERVICES", link: "/service" },
+    { name: "CONTACT", link: "/contact-us" }
   ];
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   return (
-    <header className=''>
-      <nav className='flex items-center justify-between py-6 px-8 md:px-8 font-frenchCanon font-imprint h-[100px] '>
-        
-      <div className=''>
-          <img src={Logo} alt="" className='w-20 sm:w-28'/>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className='sm:hidden flex items-center  z-50 text-white'
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? null : <BiMenuAltRight size={30} />}
-        </button>
+    <header 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-black-glass backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'
+      }`}
+    >
+      <nav className="container mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img src={Logo} alt="Amar Studio" className="h-12 sm:h-16 w-auto object-contain glow-filter" />
+        </Link>
 
         {/* Desktop Menu */}
-        <ul className='hidden sm:flex ml-auto gap-x-6 lg:gap-x-16 text-sm md:text-lg lg:text-2xl mr-[62px]'>
+        <ul className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-             <Link key={item.link} to={item.link} >
-              <ul>
-             <li  className={`text-white`}>
-             <button> {item.name}</button>
-             </li>
-             </ul>
-             </Link> 
-          ))}
-        </ul>
-
-        {/* Mobile Menu */}
-        <ul className={`fixed top-0 right-0 w-40 h-screen bg-[#0b090aab] flex flex-col items-start px-4 justify-start  text-left   py-4 space-y-6 text-sm  text-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'hidden'} sm:hidden z-40`}>
-        <button
-          className='sm:hidden flex w-full px-4  items-center  z-50 text-black  justify-start '
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ?<AiTwotoneCloseCircle size={30}/>:null}
-        </button>
-          {navItems.map((item) => (
-           
-             <Link key={item.link} to={item.link}  >
-              <ul>
-            <li  className='hover:underline text-left'>
-            <button> {item.name}</button>
-           
+            <li key={item.name}>
+              <Link 
+                to={item.link}
+                className={`text-sm tracking-widest font-bold transition-colors duration-300 relative group ${
+                  location.pathname === item.link ? 'text-gold' : 'text-gray-200 hover:text-gold-light'
+                }`}
+              >
+                {item.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300 ${
+                  location.pathname === item.link ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
+              </Link>
             </li>
-            </ul>
-            </Link>  
           ))}
         </ul>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-white hover:text-gold transition-colors"
+          onClick={() => setIsMenuOpen(true)}
+        >
+          <HiMenuAlt3 size={32} />
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+            />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed right-0 top-0 h-full w-64 bg-black-rich border-l border-gold-900 z-50 shadow-2xl flex flex-col p-6"
+            >
+              <div className="flex justify-between items-center mb-10">
+                <span className="text-gold font-title text-xl">Menu</span>
+                <button onClick={() => setIsMenuOpen(false)} className="text-gray-400 hover:text-white">
+                  <HiX size={28} />
+                </button>
+              </div>
+              
+              <ul className="flex flex-col space-y-6">
+                {navItems.map((item) => (
+                  <li key={item.name}>
+                    <Link 
+                      to={item.link}
+                      className={`text-lg font-title tracking-wide block transition-colors ${
+                        location.pathname === item.link ? 'text-gold' : 'text-gray-300 hover:text-white'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="mt-auto pt-8 border-t border-gray-800">
+                <p className="text-xs text-gray-500 text-center">
+                  &copy; {new Date().getFullYear()} Amar Studio
+                </p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
-
-
+export default Navbar;

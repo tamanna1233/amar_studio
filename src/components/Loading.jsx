@@ -1,29 +1,32 @@
+import { motion } from 'framer-motion';
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen w-full bg-black">
-      <svg
-        className="animate-spin-slow feather feather-hourglass"
-        xmlns="http://www.w3.org/2000/svg"
-        width="100"
-        height="150"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-
-      >
-        <path
-          d="M6 2h12v6l-6 6-6-6z"
-          className="fill-current text-gray-400 animate-pour-up"
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black-rich">
+      <div className="relative">
+        {/* Outer Ring */}
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          className="w-24 h-24 border-t-2 border-b-2 border-gold rounded-full"
         />
-        <path
-          d="M6 22h12v-6l-6-6-6 6z"
-          className="fill-current text-gray-700 animate-pour-down"
+        
+        {/* Inner Ring */}
+        <motion.div 
+           animate={{ rotate: -360 }}
+           transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+           className="absolute top-2 left-2 w-20 h-20 border-r-2 border-l-2 border-gold-dark rounded-full"
         />
-      </svg>
+        
+        {/* Center Text */}
+        <motion.span 
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="absolute inset-0 flex items-center justify-center text-gold-light text-xs tracking-widest uppercase font-bold"
+        >
+          Loading
+        </motion.span>
+      </div>
     </div>
   );
 };
